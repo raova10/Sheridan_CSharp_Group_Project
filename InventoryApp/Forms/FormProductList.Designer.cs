@@ -25,15 +25,15 @@
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventoryAppDataSet = new InventoryApp.InventoryAppDataSet();
-            this.productTableAdapter = new InventoryApp.InventoryAppDataSetTableAdapters.ProductTableAdapter();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productManufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productQuantityOnHandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryAppDataSet = new InventoryApp.InventoryAppDataSet();
+            this.productTableAdapter = new InventoryApp.InventoryAppDataSetTableAdapters.ProductTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -43,6 +43,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -56,23 +57,10 @@
             this.dataGridView1.DataSource = this.productBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(628, 364);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "Product";
-            this.productBindingSource.DataSource = this.inventoryAppDataSet;
-            this.productBindingSource.CurrentChanged += new System.EventHandler(this.productBindingSource_CurrentChanged);
-            // 
-            // inventoryAppDataSet
-            // 
-            this.inventoryAppDataSet.DataSetName = "InventoryAppDataSet";
-            this.inventoryAppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -112,6 +100,21 @@
             this.productQuantityOnHandDataGridViewTextBoxColumn.DataPropertyName = "ProductQuantityOnHand";
             this.productQuantityOnHandDataGridViewTextBoxColumn.HeaderText = "Quantity On Hand";
             this.productQuantityOnHandDataGridViewTextBoxColumn.Name = "productQuantityOnHandDataGridViewTextBoxColumn";
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "Product";
+            this.productBindingSource.DataSource = this.inventoryAppDataSet;
+            this.productBindingSource.CurrentChanged += new System.EventHandler(this.productBindingSource_CurrentChanged);
+            // 
+            // inventoryAppDataSet
+            // 
+            this.inventoryAppDataSet.DataSetName = "InventoryAppDataSet";
+            this.inventoryAppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
             // 
             // btnSave
             // 

@@ -33,5 +33,19 @@ namespace InventoryApp {
             inventoryAppDataSet.RejectChanges();
             this.Close();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            FormProductEdit frmEditProduct = new FormProductEdit();
+            frmEditProduct.txtProductName.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString().Trim();
+            frmEditProduct.txtProductCategory.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString().Trim();
+            frmEditProduct.txtProductDesc.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString().Trim();
+            frmEditProduct.txtProductMfg.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim();
+            frmEditProduct.txtQOH.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString().Trim();
+            frmEditProduct.ShowDialog();
+
+
+
+
+        }
     }
 }
