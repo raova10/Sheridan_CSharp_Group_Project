@@ -35,6 +35,16 @@ namespace InventoryApp {
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            ShowEditProductForm();
+
+            
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
+            btnEdit.Enabled = true;
+        }
+
+        private void ShowEditProductForm() {
             FormProductEdit frmEditProduct = new FormProductEdit();
             frmEditProduct.txtProductName.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString().Trim();
             frmEditProduct.txtProductCategory.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString().Trim();
@@ -42,10 +52,10 @@ namespace InventoryApp {
             frmEditProduct.txtProductMfg.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim();
             frmEditProduct.txtQOH.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString().Trim();
             frmEditProduct.ShowDialog();
+        }
 
-
-
-
+        private void btnEdit_Click(object sender, EventArgs e) {
+            ShowEditProductForm();
         }
     }
 }
