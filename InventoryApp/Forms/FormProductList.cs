@@ -30,7 +30,7 @@ namespace InventoryApp {
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
-            inventoryAppDataSet.RejectChanges();
+            productTableAdapter.Update(inventoryAppDataSet);
             this.Close();
         }
 
@@ -51,7 +51,9 @@ namespace InventoryApp {
             frmEditProduct.txtProductDesc.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString().Trim();
             frmEditProduct.txtProductMfg.Text = this.dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim();
             frmEditProduct.txtQOH.Text = this.dataGridView1.CurrentRow.Cells[5].Value.ToString().Trim();
+
             frmEditProduct.ShowDialog();
+            this.dataGridView1.CurrentRow.Cells[1].Value = frmEditProduct.txtProductName.Text;
         }
 
         private void btnEdit_Click(object sender, EventArgs e) {

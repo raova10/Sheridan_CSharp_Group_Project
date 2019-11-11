@@ -34,7 +34,6 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryAppDataSet = new InventoryApp.InventoryAppDataSet();
             this.productTableAdapter = new InventoryApp.InventoryAppDataSetTableAdapters.ProductTableAdapter();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -45,7 +44,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,6 +57,7 @@
             this.dataGridView1.DataSource = this.productBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(628, 364);
             this.dataGridView1.TabIndex = 0;
@@ -118,23 +118,13 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(671, 104);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(115, 35);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(671, 158);
+            this.btnCancel.Location = new System.Drawing.Point(673, 405);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(115, 33);
             this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -156,7 +146,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormProductList";
             this.Text = "ProductList";
@@ -180,7 +169,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productDescDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productManufacturerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productQuantityOnHandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnEdit;
     }

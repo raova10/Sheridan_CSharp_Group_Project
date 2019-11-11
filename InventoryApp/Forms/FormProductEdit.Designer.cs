@@ -33,6 +33,7 @@
             this.txtProductMfg = new System.Windows.Forms.TextBox();
             this.txtQOH = new System.Windows.Forms.TextBox();
             this.txtProductDesc = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblProductName
@@ -116,11 +117,22 @@
             this.txtProductDesc.Size = new System.Drawing.Size(240, 65);
             this.txtProductDesc.TabIndex = 9;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(415, 359);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(107, 38);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // FormProductEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 409);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtProductDesc);
             this.Controls.Add(this.txtQOH);
             this.Controls.Add(this.txtProductMfg);
@@ -150,5 +162,6 @@
         public System.Windows.Forms.TextBox txtProductMfg;
         public System.Windows.Forms.TextBox txtQOH;
         public System.Windows.Forms.TextBox txtProductDesc;
+        private System.Windows.Forms.Button btnSave;
     }
 }
