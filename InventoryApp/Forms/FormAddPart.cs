@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventoryApp {
-    public partial class Form1 : Form {
-        public Form1() {
+namespace InventoryApp.Forms
+{
+    public partial class FormAddPart : Form
+    {
+        public FormAddPart()
+        {
             InitializeComponent();
         }
 
-        private void listProducts_Click(object sender, EventArgs e) {
-            FormProductList frmProdList = new FormProductList();
-            frmProdList.Show();
+        private void addPartBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

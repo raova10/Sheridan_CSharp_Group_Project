@@ -46,17 +46,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\FormAddPart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\FormAddPart.Designer.cs">
+      <DependentUpon>FormAddPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddProduct.Designer.cs">
+      <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPartEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPartEdit.Designer.cs">
+      <DependentUpon>FormPartEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPartList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPartList.Designer.cs">
+      <DependentUpon>FormPartList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormProductEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormProductEdit.Designer.cs">
       <DependentUpon>FormProductEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryAppDataSet.cs">
+      <DependentUpon>InventoryAppDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="InventoryAppDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -71,8 +98,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAddPart.resx">
+      <DependentUpon>FormAddPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddProduct.resx">
+      <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPartEdit.resx">
+      <DependentUpon>FormPartEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPartList.resx">
+      <DependentUpon>FormPartList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormProductEdit.resx">
       <DependentUpon>FormProductEdit.cs</DependentUpon>

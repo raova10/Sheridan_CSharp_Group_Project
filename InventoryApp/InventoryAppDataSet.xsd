@@ -86,7 +86,7 @@ SELECT ProductID, ProductName, ProductCategory, ProductDesc, ProductManufacturer
   <xs:element name="InventoryAppDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="InventoryAppDataSet" msprop:Generator_UserDSName="InventoryAppDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Product" msprop:Generator_TableClassName="ProductDataTable" msprop:Generator_TableVarName="tableProduct" msprop:Generator_TablePropName="Product" msprop:Generator_RowDeletingName="ProductRowDeleting" msprop:Generator_RowChangingName="ProductRowChanging" msprop:Generator_RowEvHandlerName="ProductRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductRowDeleted" msprop:Generator_UserTableName="Product" msprop:Generator_RowChangedName="ProductRowChanged" msprop:Generator_RowEvArgName="ProductRowChangeEvent" msprop:Generator_RowClassName="ProductRow">
+        <xs:element name="Product" msprop:Generator_TableClassName="ProductDataTable" msprop:Generator_TableVarName="tableProduct" msprop:Generator_RowChangedName="ProductRowChanged" msprop:Generator_TablePropName="Product" msprop:Generator_RowDeletingName="ProductRowDeleting" msprop:Generator_RowChangingName="ProductRowChanging" msprop:Generator_RowEvHandlerName="ProductRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductRowDeleted" msprop:Generator_RowClassName="ProductRow" msprop:Generator_UserTableName="Product" msprop:Generator_RowEvArgName="ProductRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ProductID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" msprop:Generator_UserColumnName="ProductID" type="xs:int" />
@@ -122,11 +122,26 @@ SELECT ProductID, ProductName, ProductCategory, ProductDesc, ProductManufacturer
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Part" msprop:Generator_TableClassName="PartDataTable" msprop:Generator_TableVarName="tablePart" msprop:Generator_TablePropName="Part" msprop:Generator_RowDeletingName="PartRowDeleting" msprop:Generator_RowChangingName="PartRowChanging" msprop:Generator_RowEvHandlerName="PartRowChangeEventHandler" msprop:Generator_RowDeletedName="PartRowDeleted" msprop:Generator_UserTableName="Part" msprop:Generator_RowChangedName="PartRowChanged" msprop:Generator_RowEvArgName="PartRowChangeEvent" msprop:Generator_RowClassName="PartRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PartID" msprop:Generator_ColumnVarNameInTable="columnPartID" msprop:Generator_ColumnPropNameInRow="PartID" msprop:Generator_ColumnPropNameInTable="PartIDColumn" msprop:Generator_UserColumnName="PartID" type="xs:string" />
+              <xs:element name="PartName" msprop:Generator_ColumnVarNameInTable="columnPartName" msprop:Generator_ColumnPropNameInRow="PartName" msprop:Generator_ColumnPropNameInTable="PartNameColumn" msprop:Generator_UserColumnName="PartName" type="xs:string" minOccurs="0" />
+              <xs:element name="PartDesc" msprop:Generator_ColumnVarNameInTable="columnPartDesc" msprop:Generator_ColumnPropNameInRow="PartDesc" msprop:Generator_ColumnPropNameInTable="PartDescColumn" msprop:Generator_UserColumnName="PartDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="PartQuantityOnHand" msprop:Generator_ColumnVarNameInTable="columnPartQuantityOnHand" msprop:Generator_ColumnPropNameInRow="PartQuantityOnHand" msprop:Generator_ColumnPropNameInTable="PartQuantityOnHandColumn" msprop:Generator_UserColumnName="PartQuantityOnHand" type="xs:string" minOccurs="0" />
+              <xs:element name="PartManufacturer" msprop:Generator_ColumnVarNameInTable="columnPartManufacturer" msprop:Generator_ColumnPropNameInRow="PartManufacturer" msprop:Generator_ColumnPropNameInTable="PartManufacturerColumn" msprop:Generator_UserColumnName="PartManufacturer" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Product" />
       <xs:field xpath="mstns:ProductID" />
+    </xs:unique>
+    <xs:unique name="Part_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Part" />
+      <xs:field xpath="mstns:PartID" />
     </xs:unique>
   </xs:element>
 </xs:schema>

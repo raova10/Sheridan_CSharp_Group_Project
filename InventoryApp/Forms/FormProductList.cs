@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InventoryApp {
+namespace InventoryApp.Forms {
     public partial class FormProductList : Form {
         public FormProductList() {
             InitializeComponent();
@@ -16,11 +16,18 @@ namespace InventoryApp {
 
         private void ProductList_Load(object sender, EventArgs e) {
             // TODO: This line of code loads data into the 'inventoryAppDataSet.Product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.inventoryAppDataSet.Product);
+            try
+            {
+                this.productTableAdapter.Fill(this.inventoryAppDataSet.Product);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e) {
+        private void prodSaveBtn_Click(object sender, EventArgs e) {
             productTableAdapter.Update(inventoryAppDataSet);
             this.Close();
         }
@@ -41,7 +48,7 @@ namespace InventoryApp {
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) {
-            btnEdit.Enabled = true;
+            prodEditBtn.Enabled = true;
         }
 
         private void ShowEditProductForm() {
@@ -56,8 +63,14 @@ namespace InventoryApp {
             this.dataGridView1.CurrentRow.Cells[1].Value = frmEditProduct.txtProductName.Text;
         }
 
-        private void btnEdit_Click(object sender, EventArgs e) {
+        private void prodEditBtn_Click(object sender, EventArgs e) {
             ShowEditProductForm();
+        }
+
+        private void AddProductBtn_Click(object sender, EventArgs e)
+        {
+            FormAddProduct formAddProduct = new FormAddProduct();
+            formAddProduct.Show();
         }
     }
 }
