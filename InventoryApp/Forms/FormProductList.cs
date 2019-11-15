@@ -72,5 +72,6 @@ namespace InventoryApp.Forms {
             FormAddProduct formAddProduct = new FormAddProduct();
             formAddProduct.Show();
         }
+
     }
 }

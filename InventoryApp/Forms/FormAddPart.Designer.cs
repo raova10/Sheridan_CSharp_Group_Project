@@ -47,7 +47,7 @@
             this.addPartBtn.TabIndex = 17;
             this.addPartBtn.Text = "Add Part";
             this.addPartBtn.UseVisualStyleBackColor = true;
-            this.addPartBtn.Click += new System.EventHandler(this.AddPartBtn_Click);
+            this.addPartBtn.Click += new System.EventHandler(this.addPartBtn_Click);
             // 
             // textBox4
             // 
